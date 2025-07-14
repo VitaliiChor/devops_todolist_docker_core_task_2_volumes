@@ -21,4 +21,5 @@ RUN pip install --upgrade pip && \
 # RUN python manage.py migrate
 
 # Run database migrations and start the Django application
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8080"]
+ENTRYPOINT ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8080"]
+
